@@ -1,0 +1,82 @@
+:root {
+  --avatar-size: 64px;
+  --avatar-spacing: 10px;
+  --avatar-count: 4;
+  --avatar-container: calc(var(--avatar-size) * var(--avatar-count) + var(--avatar-spacing) * var(--avatar-count) * 2);
+
+  --state-size: 16px;
+  --state-off-color: #DBDBDB;
+  --state-on-color: #4CFE88;
+}
+
+/* 컴포넌트 스타일 */
+
+.avatar {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  inline-size: var(--avatar-size);
+  block-size: var(--avatar-size);
+
+  img {
+    margin: 0;
+    inline-size: var(--avatar-size);
+    block-size: var(--avatar-size);
+    border-radius: 50%;
+  }
+
+  figcaption {
+    inline-size: var(--state-size);
+    block-size: var(--state-size);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: radial-gradient(closest-side, #fff 40%, var(--state-off-color) 40%);
+  }
+
+  &.is-online figcaption {
+    background: var(--state-on-color);
+  }
+}
+
+/* 레이아웃 배치 */
+.member {
+  inline-size: var(--avatar-container);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0;
+    display: flow-root;
+
+    li {
+      inline-size: var(--avatar-size);
+      block-size: var(--avatar-size);
+      /* float: left; */
+      padding: var(--avatar-spacing);
+    }
+  }
+}
+
+/* flex */
+@supports (display: flex) {
+  .member ul {
+    display: flex;
+    flex-flow: row wrap;
+
+    li{
+      float: none;
+    }
+
+    li:nth-child(n+5) {
+      order: -1;
+    }
+  }
+}
