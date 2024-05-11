@@ -1,0 +1,188 @@
+/* 기본 스타일 */
+:root {
+  --base-font-family: "Pretendard Variable", sans-serif;
+  --font-color: #181818;
+
+  --input-line-color: #dadada;
+  --focus-bg-color: #e9f0fd;
+  --focus-line-color: #03cf5d;
+  --focus-font-color: #03cf5d;
+
+  --btn-font-color: #fff;
+  --btn-bg-color: #03cf5d;
+
+  --focus-style-custom: #24388d;
+}
+
+body {
+  font-family: var(--base-font-family);
+  color: var(--font-color);
+  line-height: 1.15;
+}
+
+body *, body *::before, body *::after {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* 초기화 */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0
+}
+
+input, button {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+/* 로그인 입력 서식 */
+form {
+  width: 100%;
+}
+
+.login-input {
+  font-size: 1rem;
+
+  input {
+    width: 100%;
+    height: 45px;
+    padding: 0 1.25rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+    border: 1px solid var(--input-line-color);
+  }
+
+  input:focus {
+    background-color: var(--focus-bg-color);
+    outline: 1px solid var(--focus-line-color);
+    outline-offset: -1px;
+  }
+}
+
+.login-btn {
+  width: 100%;
+  height: 45px;
+  margin-top: 1.25rem;
+  border: 0;
+  color: var(--btn-font-color);
+  background: var(--btn-bg-color);
+}
+
+/* 로그인 옵션 */
+.login-save, .ip-sequrity {
+  position: relative;
+
+  input {
+    position: absolute;
+    appearance: none;
+    top: -3px;
+  }
+
+  label {
+    line-height: 24px;
+    text-align: center;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input:focus-visible {
+    border: 2px solid var(--focus-style-custom);
+    border-radius: 3px;
+  }
+}
+
+.login-save {
+  input {
+    left: -6px;
+    width: 24px;
+    height: 24px;
+  }
+
+  label {
+    background: url(./icons/unchecked.svg) no-repeat 0 0 /contain;
+    padding: 0 0 0 1.5rem;
+  }
+
+  input:checked + label {
+    background-image: url(./icons/checked.svg);
+  }
+}
+
+.ip-sequrity {
+  input {
+    width: 34px;
+    height: 24px;
+    right: -5px;
+  }
+
+  label {
+    .sq-on {
+      display: none;
+    }
+  }
+
+  input:checked + label {
+    .sq-on {
+      display: inline;
+      color: var(--focus-font-color);
+      font-weight: 500;
+    }
+
+    .sq-off {
+      display: none;
+    }
+  }
+}
+
+/* 레이아웃 배치 */
+.logo, .login-section {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  margin: 4.375rem 0 1.875rem;
+}
+
+.login-section {
+  padding: 1.25rem;
+}
+
+.login-options {
+  margin-top: 0.625rem;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+
+  .ip-sequrity {
+    display: none;
+  }
+}
+
+
+/* 데스크탑 배치 */
+@media (min-width: 768px) {
+  form {
+    width: 500px;
+  }
+
+  .login-options {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  
+    .ip-sequrity {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>네이버 로그인 화면</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./naver.css" />
+  </head>
+  <body>
+
+    <!-- 로고 -->
+    <h1 class="logo">
+      <a href="/">
+        <img src="./logo.png" srcset="./logo.svg 1x" alt="네이버" />
+      </a>
+    </h1>
+
+    <!-- 로그인 폼 -->
+    <section class="login-section">
+      <h2 class="sr-only">로그인</h2>
+      <form action="/">
+        <fieldset>
+          <legend class="sr-only">회원 로그인 폼</legend>
+            <!-- 아이디(이메일) -->
+            <div class="login-input">
+              <label for="userEmail" class="sr-only">이메일 아이디</label>
+              <input type="email" id="userEmail" name="userEmail" required placeholder="아이디(이메일)"  />
+            </div>
+
+            <!-- 비밀번호 -->
+            <div class="login-input">
+              <label for="userPassword" class="sr-only">비밀번호</label>
+              <input type="password" id="userPassword" name="userPassword" required placeholder="비밀번호"  />
+            </div>
+
+          <button type="submit" class="login-btn">로그인</button>
+        </fieldset>
+
+        <fieldset>
+          <legend class="sr-only">로그인 옵션</legend>
+          <div role="group" class="login-options">
+            <div class="login-save">
+              <input type="checkbox" id="loginSave" />
+              <label for="loginSave">로그인 상태 유지</label>
+            </div>
+
+            <div class="ip-sequrity">
+              <a href="./ip_security.html" target="_blank">IP 보안</a>
+              <input type="checkbox" id="ipSequrity" />
+              <label for="ipSequrity">
+                <span class="sq-on">ON</span>
+                <span class="sq-off">OFF</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+  </body>
+</html>
