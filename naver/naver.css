@@ -45,6 +45,7 @@ h1, h2 {
   margin: 0;
 }
 
+/* 컴포넌트 영역 */
 /* 로그인 입력 서식 */
 form {
   width: 100%;
@@ -69,15 +70,6 @@ form {
   }
 }
 
-.login-btn {
-  width: 100%;
-  height: 45px;
-  margin-top: 1.25rem;
-  border: 0;
-  color: var(--btn-font-color);
-  background: var(--btn-bg-color);
-}
-
 /* 로그인 옵션 */
 .login-save, .ip-sequrity {
   position: relative;
@@ -96,11 +88,6 @@ form {
   input:focus {
     outline: none;
   }
-
-  input:focus-visible {
-    border: 2px solid var(--focus-style-custom);
-    border-radius: 3px;
-  }
 }
 
 .login-save {
@@ -117,6 +104,11 @@ form {
 
   input:checked + label {
     background-image: url(./icons/checked.svg);
+  }
+
+  input:focus-visible {
+    border: 2px solid var(--focus-style-custom);
+    border-radius: 3px;
   }
 }
 
@@ -144,12 +136,33 @@ form {
       display: none;
     }
   }
+
+  input:focus + label {
+    outline: none;
+  }
+
+  input:focus-visible + label {
+    border: 2px solid var(--focus-style-custom);
+    border-radius: 3px;
+  }
 }
 
-/* 레이아웃 배치 */
+/* 로그인 버튼 */
+.login-btn {
+  width: 100%;
+  height: 45px;
+  margin-top: 1.25rem;
+  border: 0;
+  color: var(--btn-font-color);
+  background: var(--btn-bg-color);
+}
+
+
+/* 레이아웃 영역 */
 .logo, .login-section {
   display: flex;
-  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .logo {
@@ -160,7 +173,13 @@ form {
   padding: 1.25rem;
 }
 
+fieldset {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .login-options {
+  order: 1;
   margin-top: 0.625rem;
   display: flex;
   flex-flow: row-reverse nowrap;

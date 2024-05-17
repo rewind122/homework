@@ -18,7 +18,7 @@
     <!-- 로고 -->
     <h1 class="logo">
       <a href="/">
-        <img src="./logo.png" srcset="./logo.svg 1x" alt="네이버" />
+        <img src="./logo.png" srcset="./logo.svg" alt="네이버" />
       </a>
     </h1>
 
@@ -28,29 +28,24 @@
       <form action="/">
         <fieldset>
           <legend class="sr-only">회원 로그인 폼</legend>
-            <!-- 아이디(이메일) -->
-            <div class="login-input">
-              <label for="userEmail" class="sr-only">이메일 아이디</label>
-              <input type="email" id="userEmail" name="userEmail" required placeholder="아이디(이메일)"  />
-            </div>
+          <!-- 아이디(이메일) -->
+          <div class="login-input">
+            <label for="userEmail" class="sr-only">이메일 아이디</label>
+            <input type="email" id="userEmail" name="userEmail" required placeholder="아이디(이메일)"  />
+          </div>
 
-            <!-- 비밀번호 -->
-            <div class="login-input">
-              <label for="userPassword" class="sr-only">비밀번호</label>
-              <input type="password" id="userPassword" name="userPassword" required placeholder="비밀번호"  />
-            </div>
-
-          <button type="submit" class="login-btn">로그인</button>
-        </fieldset>
-
-        <fieldset>
-          <legend class="sr-only">로그인 옵션</legend>
+          <!-- 비밀번호 -->
+          <div class="login-input">
+            <label for="userPassword" class="sr-only">비밀번호</label>
+            <input type="password" id="userPassword" name="userPassword" required placeholder="비밀번호"  />
+          </div>
+          
           <div role="group" class="login-options">
             <div class="login-save">
               <input type="checkbox" id="loginSave" />
               <label for="loginSave">로그인 상태 유지</label>
             </div>
-
+  
             <div class="ip-sequrity">
               <a href="./ip_security.html" target="_blank">IP 보안</a>
               <input type="checkbox" id="ipSequrity" />
@@ -60,6 +55,8 @@
               </label>
             </div>
           </div>
+
+          <button type="submit" class="login-btn">로그인</button>
         </fieldset>
       </form>
     </section>
