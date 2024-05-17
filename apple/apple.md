@@ -1,5 +1,5 @@
 # apple 제품 카드
-<!-- ![애플 제품 카드 동작 이미지](./homework-apple.gif) -->
+![애플 제품 카드 동작 이미지](./homework-apple.gif)
 
 ### HTML 마크업
 - 카드 컴포넌트
