@@ -1,0 +1,184 @@
+@import url(./reset.css);
+@import url(./base.css);
+@import url(./theme.css);
+
+/* 카드 컴포넌트 */
+.card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: var(--size);
+  padding-top: var(--large-spacing);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: var(--small-spacing);
+
+  .product-name {
+    font-size: var(--large-text);
+    font-weight: 700;
+  }
+
+  .product-info {
+    font-size: var(--base-text);
+    text-align: center;
+    line-height: var(--line-normal);
+  }
+
+  .release-date {
+    font-size: var(--small-text);
+    color: var(--gray);
+  }
+
+  .info-link-group {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: var(--base-spacing);
+
+    a {
+      padding: var(--x-small-spacing) var(--small-spacing);
+      border-radius: 100px;
+      font-size: var(--xx-small-text);
+      flex: 0 1 auto;
+    }
+  }
+
+  &.prv-product {
+
+    .release-date {
+      display: none;
+    }
+  }
+}
+
+/* 테마별 색상 */
+.dark {
+  color: var(--white);
+
+  .more-info{
+    background-color: var(--blue-100);
+    border: 1px solid var(--blue-100);
+  }
+
+  .price-info {
+    border: 1px solid var(--blue-100);
+    color: var(--blue-100);
+  }
+}
+
+.light {
+  color: var(--black);
+
+  .more-info{
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    color: var(--white);
+  }
+
+  .price-info {
+    border: 1px solid var(--black);
+  }
+}
+
+/* 제품별 배경 이미지 셋 - 모바일 환경 */
+.ipad-pro {
+  background-image: image-set(
+    url(./../products/ipad_pro.jpeg) 1x,
+    url(./../products/ipad_pro_2x.jpeg) 2x
+  );
+}
+.ipad-air {
+  background-image: image-set(
+    url(./../products/ipad_air.jpeg) 1x,
+    url(./../products/ipad_air_2x.jpeg) 2x
+  );
+}
+.iphone-15-pro {
+  background-image: image-set(
+    url(./../products/iphone15_pro.jpeg) 1x,
+    url(./../products/iphone15_pro_2x.jpeg) 2x
+  );
+}
+.iphone-15 {
+  background-image: image-set(
+    url(./../products/iphone15.jpeg) 1x,
+    url(./../products/iphone15_2x.jpeg) 2x
+  );
+}
+.watch {
+  background-image: image-set(
+    url(./../products/apple_watch.jpeg) 1x,
+    url(./../products/apple_watch_2x.jpeg) 2x
+  );
+}
+.macbook-air {
+  background-image: image-set(
+    url(./../products/macbook_air.jpeg) 1x,
+    url(./../products/macbook_air_2x.jpeg) 2x
+  );
+}
+.airpods-pro {
+  background-image: image-set(
+    url(./../products/airpods_pro.jpeg) 1x,
+    url(./../products/airpods_pro_2x.jpeg) 2x
+  );
+}
+
+/* 카드 레이아웃 - 모바일 환경 */
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--base-spacing);
+
+  .card {
+    grid-column: span 2;
+  }
+}
+
+/* 카드 레이아웃 - 데스크톱 환경 */
+@media (min-width: 1024px) {
+  .card-container {
+
+    .card:nth-child(n+4) {
+      grid-column: span 1;
+    }
+  }
+
+  .card {
+    padding-top: var(--extra-large-spacing);
+  
+    .product-name {
+      font-size: var(--extra-large-text);
+    }
+  
+    .product-info {
+      font-size: var(--medium-text);
+    }
+  
+    .info-link-group a{
+      font-size: var(--x-small-text);
+    }
+  }
+
+  /* 제품별 배경 이미지 셋 - 데스크톱 환경 */
+  .ipad-pro {
+    background-image: image-set(
+      url(./../products/ipad_pro_wide.jpeg) 1x,
+      url(./../products/ipad_pro_wide_2x.jpeg) 2x
+    );
+  }
+  .ipad-air {
+    background-image: image-set(
+      url(./../products/ipad_air_wide.jpeg) 1x,
+      url(./../products/ipad_air_wide_2x.jpeg) 2x
+    );
+  }
+  .iphone-15-pro {
+    background-image: image-set(
+      url(./../products/iphone15_pro_wide.jpeg) 1x,
+      url(./../products/iphone15_pro_wide_2x.jpeg) 2x
+    );
+  }
+}
